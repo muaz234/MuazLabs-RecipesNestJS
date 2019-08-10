@@ -4,10 +4,14 @@ import { AppService } from './app.service';
 import { RecipesController } from './recipes/recipes.controller';
 import { RecipesModule } from './recipes/recipes.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { RecipesService } from './recipes/recipes.service';
+import { Connection } from 'typeorm';
 @Module({
   imports: [RecipesModule,
             TypeOrmModule.forRoot()],
-  controllers: [AppController, RecipesController],
-  providers: [AppService],
+controllers: [AppController],
+providers: [AppService]         
 })
-export class AppModule {}
+export class AppModule {
+  constructor( private readonly connection: Connection) {}
+}

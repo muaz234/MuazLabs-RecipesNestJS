@@ -1,7 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {Entity, PrimaryGeneratedColumn, Column} from 'typeorm';
 
 @Entity()
-
 export class Recipes {
 
     @PrimaryGeneratedColumn()
@@ -19,6 +18,6 @@ export class Recipes {
     @Column({length: 255})
     facebook_url: string;
 
-    @Column('boolean')
+    @Column()
     active: boolean;
 }
