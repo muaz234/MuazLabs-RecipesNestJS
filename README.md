@@ -21,8 +21,6 @@
   <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
   <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## Introduction
 
@@ -31,38 +29,38 @@ This Recipe REST API is created for me to learn NestJS and get familiar with it.
 ## Run Project
 
 If you have not install Nest, You may run the installation script below. Ensure you have installed NodeJS into your system environment:
-```
+```sh
 npm i -g @nestjs/cli
 ```
 
 1. Clone this repository into your directory
 2. Cd to the directory
-3. Change ownership of your folder to your username, or else you will need root to install all dependencies
+3. Change ownership of your folder to your username, or else you will need root(For UNIX terminals) to install all dependencies
 4. Install all required modules:
 
-```
+```sh
 npm install
 ``` 
-5. Create your own ormconfig.json
-```
+5. Create your own ormconfig.json in your root project directory
+```json
 {
         "type": "mysql",
         "host": "your host",
         "port": 3306,
         "username": "your username",
-        "password": "yourr password",
-        "database": "db name you created",
+        "password": "your password",
+        "database": "db name you created", 
         "entities": ["src/**/*.entity{.ts,.js}"], // if you would like to use npm run start:dev, change src to dist
         "synchronize": true
 }
 ```
 6. Run the project
-```
+```sh
 npm run start or npm run start:dev
 ```
-7. Test the api at localhost:3000/recipes using any 3rd party API tools. Recommended to use Insomnia or Postman and I recommend using Insomnia
+7. Test the api at localhost:3000/recipes using any 3rd party API tools. Recommended to use Insomnia or Postman and I prefer using Insomnia
 8. Star this repo if you find it useful or open pull request if you would like to improve this repo.
 
-###Screenshot
+######Screenshot
 
 ![Insomnia](insomnia_result.png)
