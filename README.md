@@ -52,7 +52,7 @@ npm install
         "database": "db name you created", 
         "entities": ["src/**/*.entity{.ts,.js}"],
         "synchronize": true
-        // if you would like to use npm run start:dev, change src to dist
+        if you would like to use npm run start:dev, change src to dist
 }
 ```
 6. Run the project
