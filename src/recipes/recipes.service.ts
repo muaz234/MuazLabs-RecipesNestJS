@@ -23,12 +23,13 @@ async createRecipe(recipe: Recipes): Promise<Recipes> {
     return await this.recipesRepository.save(recipe);
 }
 
-async updateRecipe(recipe: Recipes): Promise<UpdateResult> {
-    return await this.recipesRepository.update(recipe.id, recipe)
+async updateRecipe(_id: number, recipe: Recipes): Promise<any> {
+    const id =_id;
+    return await this.recipesRepository.update(id,recipe)
 }
 
-async deleteRecipe(id): Promise<DeleteResult> {
-   return await this.recipesRepository.delete(id);
+async deleteRecipe(recipe: Recipes): Promise<any> {
+   return await this.recipesRepository.delete(recipe);
 }
     
 }
