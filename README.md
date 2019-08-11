@@ -61,6 +61,6 @@ npm run start or npm run start:dev
 7. Test the api at localhost:3000/recipes using any 3rd party API tools. Recommended to use Insomnia or Postman and I prefer using Insomnia
 8. Star this repo if you find it useful or open pull request if you would like to improve this repo.
 
-######Screenshot
+##Screenshot
 
 ![Insomnia](insomnia_result.png)
