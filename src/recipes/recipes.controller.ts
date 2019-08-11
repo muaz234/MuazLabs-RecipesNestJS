@@ -16,16 +16,19 @@ export class RecipesController {
     }
 
     @Post()
-    create(@Body() recipes: Recipes){
-        return this.recipes.createRecipe(recipes)
+    create(@Body() recipe: Recipes): Promise<any>{
+        return this.recipes.createRecipe(recipe)
     }
-    @Put()
-    update(@Body() recipes: Recipes) {
-        return this.recipes.updateRecipe(recipes)
+    
+    @Put(':id')
+    update(@Param('id') id, @Body() updateRecipe: Recipes): Promise<any> {
+        updateRecipe.id = Number(id)
+        console.log('Update data of ID: ' + updateRecipe.id)
+        return this.recipes.updateRecipe(updateRecipe)
     }
 
     @Delete(':id')
-    deleteRecipe(@Param() params){
-        return this.recipes.deleteRecipe(params.id)
+    deleteRecipe(@Param('id') id): Promise<any>{
+        return this.recipes.deleteRecipe(id)
     }
 }

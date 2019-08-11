@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Recipes } from './recipes.entity';
-import { Repository } from 'typeorm';
+import { Repository, UpdateResult, DeleteResult } from 'typeorm';
 
 @Injectable()
 export class RecipesService {
@@ -19,16 +19,16 @@ async getRecipes(_id: Number): Promise<Recipes[]> {
     });
 }
 
-async createRecipe(recipe: Recipes ){
+async createRecipe(recipe: Recipes): Promise<Recipes> {
     return await this.recipesRepository.save(recipe);
 }
 
-async updateRecipe(recipe: Recipes) {
-    return await this.recipesRepository.save(recipe)
+async updateRecipe(recipe: Recipes): Promise<UpdateResult> {
+    return await this.recipesRepository.update(recipe.id, recipe)
 }
 
-async deleteRecipe(recipes: Recipes) {
-   return await this.recipesRepository.delete(recipes);
+async deleteRecipe(id): Promise<DeleteResult> {
+   return await this.recipesRepository.delete(id);
 }
     
 }
