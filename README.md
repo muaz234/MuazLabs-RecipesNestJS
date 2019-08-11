@@ -24,52 +24,45 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Introduction
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This Recipe REST API is created for me to learn NestJS and get familiar with it. For this application, I am using MySQL as my database for this project. 
 
-## Installation
+## Run Project
 
-```bash
-$ npm install
+If you have not install Nest, You may run the installation script below. Ensure you have installed NodeJS into your system environment:
+```
+npm i -g @nestjs/cli
 ```
 
-## Running the app
+1. Clone this repository into your directory
+2. Cd to the directory
+3. Change ownership of your folder to your username, or else you will need root to install all dependencies
+4. Install all required modules:
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install
+``` 
+5. Create your own ormconfig.json
 ```
+{
+        "type": "mysql",
+        "host": "your host",
+        "port": 3306,
+        "username": "your username",
+        "password": "yourr password",
+        "database": "db name you created",
+        "entities": ["src/**/*.entity{.ts,.js}"], // if you would like to use npm run start:dev, change src to dist
+        "synchronize": true
+}
+```
+6. Run the project
+```
+npm run start or npm run start:dev
+```
+7. Test the api at localhost:3000/recipes using any 3rd party API tools. Recommended to use Insomnia or Postman and I recommend using Insomnia
+8. Star this repo if you find it useful or open pull request if you would like to improve this repo.
 
-## Support
+###Screenshot
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+![Insomnia](insomnia_result.png)
