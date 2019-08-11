@@ -50,8 +50,9 @@ npm install
         "username": "your username",
         "password": "your password",
         "database": "db name you created", 
-        "entities": ["src/**/*.entity{.ts,.js}"], // if you would like to use npm run start:dev, change src to dist
+        "entities": ["src/**/*.entity{.ts,.js}"],
         "synchronize": true
+        // if you would like to use npm run start:dev, change src to dist
 }
 ```
 6. Run the project
